@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    name: cpu-loader
+  name: cpu-loader
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      name: cpu-loader
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: cpu-loader
+    spec:
+      containers:
+      - image: mysql
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: wordpress
+        resources: {}
+status: {}
