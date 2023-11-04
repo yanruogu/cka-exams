@@ -9,6 +9,7 @@ echo $currentDir
 echo $baseDir
 
 # 01 done
+kubectl create ns appteam1
 echo "01 done..."
 # 02
 kubectl create deploy busybox --image=busybox:1.28 --replicas=3 -- /bin/sh -c "sleep 1d"
